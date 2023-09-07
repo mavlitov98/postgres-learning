@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  learning-php:
+    build:
+      context: ./docker/php
+    container_name: learning-php
+    working_dir: /var/www
+    user: 1000:1000
+    volumes:
+      - ./:/var/www
+      - ./var/composer:/var/www/var/composer
+    environment:
+      XDEBUG_CONFIG: client_host=${DOCKER_GATEWAY_HOST:-host.docker.internal}
+      PHP_IDE_CONFIG: serverName=learning
+
+  learning-postgres:
+    image: postgres:latest
+    container_name: learning-postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: learning
+    volumes:
+      - ./docker/postgres/postgres-data:/var/lib/postgresql/data
+    ports:
+      - "54321:5432"
+    restart: always
