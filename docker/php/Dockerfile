@@ -11,4 +11,3 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && mv composer.phar /usr/bin/composer
 
 ADD php.ini /usr/local/etc/php/php.ini
-

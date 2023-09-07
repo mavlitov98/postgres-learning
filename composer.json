@@ -1,0 +1,17 @@
+{
+    "name": "ruslan/postgres-learning",
+    "autoload": {
+        "psr-4": {
+            "PostgresLearning\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ruslan",
+            "email": "mavlitov98@icloud.com"
+        }
+    ],
+    "require": {
+        "ext-pdo": "*"
+    }
+}
