@@ -22,7 +22,7 @@ services:
       POSTGRES_PASSWORD: root
       POSTGRES_DB: learning
     volumes:
-      - ./docker/postgres/postgres-data:/var/lib/postgresql/data
+      - ./var/postgres-data:/var/lib/postgresql/data
     ports:
       - "54321:5432"
     restart: always
