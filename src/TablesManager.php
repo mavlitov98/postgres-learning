@@ -6,7 +6,7 @@ namespace PostgresLearning;
 
 use PDO;
 
-final class CreateTables
+final class TablesManager
 {
     public static function create(PDO $connection): void
     {
@@ -54,6 +54,29 @@ final class CreateTables
                 id SERIAL PRIMARY KEY,
                 name VARCHAR(50)
             );
+        SQL);
+    }
+
+    public static function drop(PDO $connection): void
+    {
+        $connection->exec(<<<SQL
+            DROP TABLE IF EXISTS users CASCADE;
+        SQL);
+
+        $connection->exec(<<<SQL
+            DROP TABLE IF EXISTS posts CASCADE;
+        SQL);
+
+        $connection->exec(<<<SQL
+            DROP TABLE IF EXISTS comments CASCADE;
+        SQL);
+
+        $connection->exec(<<<SQL
+            DROP TABLE IF EXISTS likes CASCADE;
+        SQL);
+
+        $connection->exec(<<<SQL
+            DROP TABLE IF EXISTS tags CASCADE;
         SQL);
     }
 }
