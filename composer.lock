@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "328d79e3d8126955d2539959921b19dd",
+    "content-hash": "6b70391ba8c78b39f27486c1801e6753",
     "packages": [
         {
             "name": "fakerphp/faker",
@@ -73,6 +73,133 @@
                 "source": "https://github.com/FakerPHP/Faker/tree/v1.23.0"
             },
             "time": "2023-06-12T08:44:38+00:00"
+        },
+        {
+            "name": "fp4php/functional",
+            "version": "v6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fp4php/functional.git",
+                "reference": "dcd309e3a253007868e9addbdaf77ed5858c4689"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fp4php/functional/zipball/dcd309e3a253007868e9addbdaf77ed5858c4689",
+                "reference": "dcd309e3a253007868e9addbdaf77ed5858c4689",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "fp4php/functional-psalm-plugin": "^1.0",
+                "php-coveralls/php-coveralls": "~2.4.0",
+                "phpunit/phpunit": "^9",
+                "rregeer/phpunit-coverage-check": "^0.3.1",
+                "symfony/process": "^5.2",
+                "vimeo/psalm": "^5.7"
+            },
+            "type": "library",
+            "extra": {
+                "psalm": {
+                    "pluginClass": "Fp\\Psalm\\FunctionalPlugin"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/Fp/Functions/Callable/Ctor.php",
+                    "src/Fp/Functions/Callable/ToSafeClosure.php",
+                    "src/Fp/Functions/Callable/DropFirstArg.php",
+                    "src/Fp/Functions/Callable/Pipe.php",
+                    "src/Fp/Functions/Callable/Compose.php",
+                    "src/Fp/Functions/Callable/Partial.php",
+                    "src/Fp/Functions/Callable/PartialLeft.php",
+                    "src/Fp/Functions/Callable/PartialRight.php",
+                    "src/Fp/Functions/Cast/AsEnumOf.php",
+                    "src/Fp/Functions/Cast/AsArray.php",
+                    "src/Fp/Functions/Cast/AsBool.php",
+                    "src/Fp/Functions/Cast/AsFloat.php",
+                    "src/Fp/Functions/Cast/AsPairs.php",
+                    "src/Fp/Functions/Cast/AsGenerator.php",
+                    "src/Fp/Functions/Cast/AsInt.php",
+                    "src/Fp/Functions/Cast/AsString.php",
+                    "src/Fp/Functions/Cast/AsList.php",
+                    "src/Fp/Functions/Cast/AsNonEmptyArray.php",
+                    "src/Fp/Functions/Cast/AsNonEmptyList.php",
+                    "src/Fp/Functions/Collection/Drop.php",
+                    "src/Fp/Functions/Collection/At.php",
+                    "src/Fp/Functions/Collection/Chunks.php",
+                    "src/Fp/Functions/Collection/Every.php",
+                    "src/Fp/Functions/Collection/Exists.php",
+                    "src/Fp/Functions/Collection/Filter.php",
+                    "src/Fp/Functions/Collection/First.php",
+                    "src/Fp/Functions/Collection/FlatMap.php",
+                    "src/Fp/Functions/Collection/Traverse.php",
+                    "src/Fp/Functions/Collection/Sequence.php",
+                    "src/Fp/Functions/Collection/Contains.php",
+                    "src/Fp/Functions/Collection/Fold.php",
+                    "src/Fp/Functions/Collection/Tap.php",
+                    "src/Fp/Functions/Collection/GroupBy.php",
+                    "src/Fp/Functions/Collection/GroupMap.php",
+                    "src/Fp/Functions/Collection/GroupMapReduce.php",
+                    "src/Fp/Functions/Collection/Unique.php",
+                    "src/Fp/Functions/Collection/Head.php",
+                    "src/Fp/Functions/Collection/Keys.php",
+                    "src/Fp/Functions/Collection/Last.php",
+                    "src/Fp/Functions/Collection/Init.php",
+                    "src/Fp/Functions/Collection/Map.php",
+                    "src/Fp/Functions/Collection/Partition.php",
+                    "src/Fp/Functions/Collection/Pluck.php",
+                    "src/Fp/Functions/Collection/Pop.php",
+                    "src/Fp/Functions/Collection/Reindex.php",
+                    "src/Fp/Functions/Collection/Reverse.php",
+                    "src/Fp/Functions/Collection/Second.php",
+                    "src/Fp/Functions/Collection/Shift.php",
+                    "src/Fp/Functions/Collection/Tail.php",
+                    "src/Fp/Functions/Collection/Zip.php",
+                    "src/Fp/Functions/Collection/MkString.php",
+                    "src/Fp/Functions/Evidence/ProveUnion.php",
+                    "src/Fp/Functions/Evidence/ProveNull.php",
+                    "src/Fp/Functions/Evidence/ProveArray.php",
+                    "src/Fp/Functions/Evidence/ProveBool.php",
+                    "src/Fp/Functions/Evidence/ProveFloat.php",
+                    "src/Fp/Functions/Evidence/ProveInt.php",
+                    "src/Fp/Functions/Evidence/ProveList.php",
+                    "src/Fp/Functions/Evidence/ProveObject.php",
+                    "src/Fp/Functions/Evidence/ProveOf.php",
+                    "src/Fp/Functions/Evidence/ProveString.php",
+                    "src/Fp/Functions/Util/ToString.php",
+                    "src/Fp/Functions/Util/JsonDecode.php",
+                    "src/Fp/Functions/Util/RegExp.php",
+                    "src/Fp/Functions/Util/Writeln.php",
+                    "src/Fp/Functions/Panic.php",
+                    "src/Fp/Functions/Id.php",
+                    "src/Fp/Functions/Unit.php"
+                ],
+                "psr-4": {
+                    "Fp\\Streams\\": "src/Fp/Streams",
+                    "Fp\\Functional\\": "src/Fp/Functional",
+                    "Fp\\Operations\\": "src/Fp/Operations",
+                    "Fp\\Collections\\": "src/Fp/Collections"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "whsv26",
+                    "email": "whsv26@gmail.com"
+                }
+            ],
+            "description": "PHP Functional Programming library",
+            "support": {
+                "issues": "https://github.com/fp4php/functional/issues",
+                "source": "https://github.com/fp4php/functional/tree/v6.0.0"
+            },
+            "time": "2023-05-22T14:30:32+00:00"
         },
         {
             "name": "psr/container",

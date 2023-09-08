@@ -13,6 +13,7 @@
     ],
     "require": {
         "ext-pdo": "*",
-        "fakerphp/faker": "^1.23"
+        "fakerphp/faker": "^1.23",
+        "fp4php/functional": "^6.0"
     }
 }
