@@ -1,1 +1,5 @@
-## Изучение PostgreSQL
+## Запуск:
+
+```bash
+make first-init
+```
