@@ -10,7 +10,7 @@ use Fp\Collections\ArrayList;
 use Fp\Streams\Stream;
 use PDO;
 
-final class InsertDataManager
+final class InsertManager
 {
     private const CHUNK_SIZE = 1000;
 

@@ -8,42 +8,41 @@ use PDO;
 
 final class IndexManager
 {
-    public static function create(PDO $connection, string $table, string $column): void
+    public static function create(PDO $connection, string $table, string $column, string $idx): void
     {
         $connection->exec(<<<SQL
-            CREATE INDEX {$column}_idx ON {$table} USING btree ({$column});
+            CREATE INDEX {$idx} ON {$table} USING btree ({$column});
         SQL);
 
-        echo "Создан btree индекс для таблицы: {$table} в {$column} \n";
+        echo "Создан btree индекс [{$idx}] для таблицы: {$table} в {$column} \n";
     }
 
-    public static function createComposite(PDO $connection, string $table, string ...$columns): void
+    public static function createComposite(PDO $connection, string $table, string $idx, string ...$columns): void
     {
         $columnsTxt = implode(', ', $columns);
-        $idxName = implode('_', $columns);
 
         $connection->exec(<<<SQL
-            CREATE INDEX {$idxName}_composite_idx ON {$table} USING btree ({$columnsTxt});
+            CREATE INDEX {$idx} ON {$table} USING btree ({$columnsTxt});
         SQL);
 
-        echo "Создан составной индекс btree для таблицы: {$table} в {$columnsTxt} \n";
+        echo "Создан составной индекс btree [{$idx}]для таблицы: {$table} в {$columnsTxt} \n";
     }
 
-    public static function createGin(PDO $connection, string $table, string $column): void
+    public static function createGin(PDO $connection, string $table, string $column, string $idx): void
     {
         $connection->exec(<<<SQL
-            CREATE INDEX {$column}_idx ON {$table} USING gin ({$column} gin_trgm_ops);
+            CREATE INDEX {$idx} ON {$table} USING gin ({$column} gin_trgm_ops);
         SQL);
 
-        echo "Создан gin индекс для таблицы: {$table} в {$column} \n";
+        echo "Создан gin индекс [{$idx}] для таблицы: {$table} в {$column} \n";
     }
 
-    public static function drop(PDO $connection, string $column): void
+    public static function drop(PDO $connection, string $idx): void
     {
         $connection->exec(<<<SQL
-            DROP INDEX {$column}_idx;
+            DROP INDEX {$idx};
         SQL);
 
-        echo "Удален индекс {$column}_idx \n";
+        echo "Удален индекс {$idx} \n";
     }
 }

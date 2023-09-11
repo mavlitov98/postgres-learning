@@ -13,7 +13,7 @@ final class Connection
     private function __construct() {}
     private function __clone() {}
 
-    public static function getConnection(): PDO
+    public static function get(): PDO
     {
         if (null === self::$connection) {
             self::$connection = new PDO($_ENV['POSTGRES_DSN']);
